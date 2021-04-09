@@ -1,0 +1,12 @@
+D:\VisualStudio\C#\Programming with C#\LAB2\EWallet\EWallet\DataStorage\bin\Debug\net5.0\DataStorage.deps.json
+D:\VisualStudio\C#\Programming with C#\LAB2\EWallet\EWallet\DataStorage\bin\Debug\net5.0\DataStorage.dll
+D:\VisualStudio\C#\Programming with C#\LAB2\EWallet\EWallet\DataStorage\bin\Debug\net5.0\ref\DataStorage.dll
+D:\VisualStudio\C#\Programming with C#\LAB2\EWallet\EWallet\DataStorage\bin\Debug\net5.0\DataStorage.pdb
+D:\VisualStudio\C#\Programming with C#\LAB2\EWallet\EWallet\DataStorage\obj\Debug\net5.0\DataStorage.csprojAssemblyReference.cache
+D:\VisualStudio\C#\Programming with C#\LAB2\EWallet\EWallet\DataStorage\obj\Debug\net5.0\DataStorage.GeneratedMSBuildEditorConfig.editorconfig
+D:\VisualStudio\C#\Programming with C#\LAB2\EWallet\EWallet\DataStorage\obj\Debug\net5.0\DataStorage.AssemblyInfoInputs.cache
+D:\VisualStudio\C#\Programming with C#\LAB2\EWallet\EWallet\DataStorage\obj\Debug\net5.0\DataStorage.AssemblyInfo.cs
+D:\VisualStudio\C#\Programming with C#\LAB2\EWallet\EWallet\DataStorage\obj\Debug\net5.0\DataStorage.csproj.CoreCompileInputs.cache
+D:\VisualStudio\C#\Programming with C#\LAB2\EWallet\EWallet\DataStorage\obj\Debug\net5.0\DataStorage.dll
+D:\VisualStudio\C#\Programming with C#\LAB2\EWallet\EWallet\DataStorage\obj\Debug\net5.0\ref\DataStorage.dll
+D:\VisualStudio\C#\Programming with C#\LAB2\EWallet\EWallet\DataStorage\obj\Debug\net5.0\DataStorage.pdb

@@ -1,0 +1,112 @@
+{
+  "version": 3,
+  "targets": {
+    "net5.0": {
+      "DataStorage/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/DataStorage.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DataStorage.dll": {}
+        }
+      },
+      "Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "DataStorage": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Models.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DataStorage/1.0.0": {
+      "type": "project",
+      "path": "../DataStorage/DataStorage.csproj",
+      "msbuildProject": "../DataStorage/DataStorage.csproj"
+    },
+    "Models/1.0.0": {
+      "type": "project",
+      "path": "../Models/Models.csproj",
+      "msbuildProject": "../Models/Models.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net5.0": [
+      "DataStorage >= 1.0.0",
+      "Models >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Ivan\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "D:\\VisualStudio\\C#\\Programming with C#\\LAB2\\EWallet\\EWallet\\Services\\Services.csproj",
+      "projectName": "Services",
+      "projectPath": "D:\\VisualStudio\\C#\\Programming with C#\\LAB2\\EWallet\\EWallet\\Services\\Services.csproj",
+      "packagesPath": "C:\\Users\\Ivan\\.nuget\\packages\\",
+      "outputPath": "D:\\VisualStudio\\C#\\Programming with C#\\LAB2\\EWallet\\EWallet\\Services\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Ivan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net5.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "projectReferences": {
+            "D:\\VisualStudio\\C#\\Programming with C#\\LAB2\\EWallet\\EWallet\\DataStorage\\DataStorage.csproj": {
+              "projectPath": "D:\\VisualStudio\\C#\\Programming with C#\\LAB2\\EWallet\\EWallet\\DataStorage\\DataStorage.csproj"
+            },
+            "D:\\VisualStudio\\C#\\Programming with C#\\LAB2\\EWallet\\EWallet\\Models\\Models.csproj": {
+              "projectPath": "D:\\VisualStudio\\C#\\Programming with C#\\LAB2\\EWallet\\EWallet\\Models\\Models.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net5.0": {
+        "targetAlias": "net5.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "EWalletWPF/1.0.0": {
+        "dependencies": {
+          "EWallet": "1.0.0",
+          "Models": "1.0.0",
+          "Prism.Core": "8.0.0.1909",
+          "Services": "1.0.0"
+        },
+        "runtime": {
+          "EWalletWPF.dll": {}
+        }
+      },
+      "Prism.Core/8.0.0.1909": {
+        "runtime": {
+          "lib/netstandard2.0/Prism.dll": {
+            "assemblyVersion": "8.0.0.1909",
+            "fileVersion": "8.0.0.1909"
+          }
+        }
+      },
+      "DataStorage/1.0.0": {
+        "runtime": {
+          "DataStorage.dll": {}
+        }
+      },
+      "EWallet/1.0.0": {
+        "runtime": {
+          "EWallet.dll": {}
+        }
+      },
+      "Models/1.0.0": {
+        "dependencies": {
+          "DataStorage": "1.0.0"
+        },
+        "runtime": {
+          "Models.dll": {}
+        }
+      },
+      "Services/1.0.0": {
+        "dependencies": {
+          "DataStorage": "1.0.0",
+          "Models": "1.0.0"
+        },
+        "runtime": {
+          "Services.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "EWalletWPF/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Prism.Core/8.0.0.1909": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Ri+iSFvJiSKYdui7qtxi3uH9NImSZ8Jl/nOosxScSJseFwAc8Lz63JLXoqSAQglcX13DzZcAMzpKNuA9rCFiJg==",
+      "path": "prism.core/8.0.0.1909",
+      "hashPath": "prism.core.8.0.0.1909.nupkg.sha512"
+    },
+    "DataStorage/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EWallet/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Services/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

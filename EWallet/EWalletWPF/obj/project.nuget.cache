@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "WvnzPO/OxnT77M7Gzs76G1iWhhA2VaXyslPLLR1SVS0eiZpGoHalKJMcF9kgqKFFzvb7Cmz9lzjP0feivCADjA==",
+  "success": true,
+  "projectFilePath": "D:\\VisualStudio\\C#\\Programming with C#\\LAB2\\EWallet\\EWallet\\EWalletWPF\\EWalletWPF.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Ivan\\.nuget\\packages\\prism.core\\8.0.0.1909\\prism.core.8.0.0.1909.nupkg.sha512"
+  ],
+  "logs": []
+}
