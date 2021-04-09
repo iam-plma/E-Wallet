@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using Services;
-using System.Windows;
-using EWalletWPF.Navigation;
+﻿using EWalletWPF.Navigation;
 using Models.Users;
 using Prism.Commands;
+using Services;
+using System;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Windows;
 
 namespace EWalletWPF.Authentication
 {
@@ -16,6 +15,10 @@ namespace EWalletWPF.Authentication
         private Action _gotoSignUp;
         private Action _gotoWallets;
         private bool _isEnabled = true;
+
+        public DelegateCommand SignInCommand { get; }
+        public DelegateCommand CloseCommand { get; }
+        public DelegateCommand SignUpCommand { get; }
 
         public bool IsEnabled
         {
@@ -30,13 +33,7 @@ namespace EWalletWPF.Authentication
             }
         }
 
-        public AuthNavigatableTypes Type
-        {
-            get
-            {
-                return AuthNavigatableTypes.SignIn;
-            }
-        }
+        
         public string Login
         {
             get
@@ -69,10 +66,13 @@ namespace EWalletWPF.Authentication
                 }
             }
         }
-
-        public DelegateCommand SignInCommand { get; }
-        public DelegateCommand CloseCommand { get; }
-        public DelegateCommand SignUpCommand { get; }
+        public AuthNavigatableTypes Type
+        {
+            get
+            {
+                return AuthNavigatableTypes.SignIn;
+            }
+        }
 
         public SignInViewModel(Action gotoSignUp, Action gotoWallets)
         {
@@ -129,9 +129,6 @@ namespace EWalletWPF.Authentication
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public void UpdateView()
-        {
-            
-        }
+        public void UpdateView() { }
     }
 }

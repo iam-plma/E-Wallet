@@ -1,10 +1,10 @@
-﻿using System;
+﻿using DataStorage;
+using Models.Users;
+using Models.Wallets;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using DataStorage;
-using Models.Users;
-using Models.Wallets;
 
 namespace Services
 {
@@ -55,7 +55,7 @@ namespace Services
 
             return walletsResult;
 
-            
+
         }
     }
 }

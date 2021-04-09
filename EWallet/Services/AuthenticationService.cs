@@ -1,9 +1,8 @@
-﻿using System;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using DataStorage;
 using Models.Users;
-using DataStorage;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Services
 {

@@ -21,7 +21,7 @@ namespace Models.Users
         }
 
         public Guid Guid { get; }
-       // public string FirstName { get; }
+        // public string FirstName { get; }
         //public string LastName { get; }
         public string Email { get; }
         public string Login { get; }

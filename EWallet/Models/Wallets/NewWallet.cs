@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Models.Wallets
+﻿namespace Models.Wallets
 {
     public class NewWallet
     {

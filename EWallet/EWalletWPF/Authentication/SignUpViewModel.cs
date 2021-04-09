@@ -1,12 +1,12 @@
-﻿using System;
-using System.ComponentModel;
+﻿using EWalletWPF.Navigation;
 using Models.Users;
-using System.Windows;
-using System.Runtime.CompilerServices;
-using EWalletWPF.Navigation;
 using Prism.Commands;
 using Services;
+using System;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
+using System.Windows;
 
 namespace EWalletWPF.Authentication
 {
@@ -17,6 +17,9 @@ namespace EWalletWPF.Authentication
 
         private int _passwordLength;
         private string _passwordRepeat;
+
+        public DelegateCommand SignUpCommand { get; }
+        public DelegateCommand SignInCommand { get; }
 
         public AuthNavigatableTypes Type
         {
@@ -126,10 +129,6 @@ namespace EWalletWPF.Authentication
             }
         }
 
-        public DelegateCommand SignUpCommand { get; }
-        public DelegateCommand SignInCommand { get; }
-        
-
         public SignUpViewModel(Action gotoSignIn)
         {
             SignUpCommand = new DelegateCommand(SignUp, IsSignUpEnabled);
@@ -161,13 +160,13 @@ namespace EWalletWPF.Authentication
                 && !String.IsNullOrWhiteSpace(FirstName) && !String.IsNullOrWhiteSpace(LastName) && !String.IsNullOrWhiteSpace(Email)
                 && _passwordLength >= 8 && IsValidEmailAddress(Email);
         }
-        
+
         private bool IsValidEmailAddress(string s)
         {
             Regex regex = new Regex(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$");
             return regex.IsMatch(s);
         }
-        
+
         public void ClearSensitiveData()
         {
             _regUser = new RegistrationUser();
@@ -180,9 +179,6 @@ namespace EWalletWPF.Authentication
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public void UpdateView()
-        {
-            
-        }
+        public void UpdateView() { }
     }
 }

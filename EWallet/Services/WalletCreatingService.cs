@@ -2,10 +2,7 @@
 using Models.Users;
 using Models.Wallets;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace Services
@@ -19,13 +16,13 @@ namespace Services
         {
             if (String.IsNullOrWhiteSpace(newWallet.Label))
                 throw new ArgumentException("Label is Empty");
-            
+
             var dbWallet = new DBWallet(newWallet.Label, newWallet.Description, newWallet.Balance, newWallet.Currency);
 
             var users = await _userStorage.GetAllAsync();
             var dbUser = users.FirstOrDefault(user => user.Login == UserManager.Login);
             dbUser.AddWallet(dbWallet.Guid);
-   
+
             await _walletStorage.AddOrUpdateAsync(dbWallet);
             await _userStorage.AddOrUpdateAsync(dbUser);
 

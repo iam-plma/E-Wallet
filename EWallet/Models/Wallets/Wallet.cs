@@ -1,6 +1,4 @@
-﻿using Models.Users;
-
-namespace Models.Wallets
+﻿namespace Models.Wallets
 {
     public enum Currency
     {

@@ -1,22 +1,23 @@
 ﻿using EWalletWPF.Navigation;
-using Services;
-using System.ComponentModel;
-using System.Collections.ObjectModel;
 using Prism.Commands;
-using System;
-using System.Runtime.CompilerServices;
 using Prism.Mvvm;
+using Services;
+using System;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace EWalletWPF.Wallets
 {
-    public class WalletsViewModel : BindableBase , INotifyPropertyChanged, INavigatable<WalletsNavigatableTypes>
+    public class WalletsViewModel : BindableBase, INotifyPropertyChanged, INavigatable<WalletsNavigatableTypes>
     {
         private WalletService _service;
         private WalletDetailsViewModel _currentWallet;
-
         private Action _gotoAddWallet;
         public static ObservableCollection<WalletDetailsViewModel> Wallets { get; set; }
-        
+        public DelegateCommand AddWalletCommand { get; }
+        public DelegateCommand QuitCommand { get; }
+
         public WalletDetailsViewModel CurrentWallet
         {
             get
@@ -29,7 +30,13 @@ namespace EWalletWPF.Wallets
                 RaisePropertyChanged();
             }
         }
-        
+        public WalletsNavigatableTypes Type
+        {
+            get
+            {
+                return WalletsNavigatableTypes.MainWallet;
+            }
+        }
         public WalletsViewModel(Action gotoAddWallet)
         {
             _service = new WalletService();
@@ -42,26 +49,12 @@ namespace EWalletWPF.Wallets
             AddWalletCommand = new DelegateCommand(_gotoAddWallet);
             QuitCommand = new DelegateCommand(() => Environment.Exit(0));
         }
-
-        
-        public WalletsNavigatableTypes Type
-        {
-            get
-            {
-                return WalletsNavigatableTypes.MainWallet;
-            }
-        }
-
         public void ClearSensitiveData()
         {
 
         }
-
-        public DelegateCommand AddWalletCommand { get; }
-        public DelegateCommand QuitCommand { get; }
-
         public event PropertyChangedEventHandler PropertyChanged1;
-        
+
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged1?.Invoke(this, new PropertyChangedEventArgs(propertyName));

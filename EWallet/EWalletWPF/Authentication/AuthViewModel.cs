@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using EWalletWPF.Navigation;
+﻿using EWalletWPF.Navigation;
+using System;
 
 namespace EWalletWPF.Authentication
 {
@@ -42,9 +38,6 @@ namespace EWalletWPF.Authentication
             CurrentViewModel.ClearSensitiveData();
         }
 
-        public void UpdateView()
-        {
-            
-        }
+        public void UpdateView() { }
     }
 }

@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Prism.Commands;
-using EWalletWPF.Navigation;
-using Services;
-using System.Windows;
+﻿using EWalletWPF.Navigation;
 using Models.Wallets;
-using System.Runtime.CompilerServices;
+using Prism.Commands;
+using Services;
+using System;
 using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using System.Windows;
 
 namespace EWalletWPF.Wallets
 {
@@ -17,6 +13,8 @@ namespace EWalletWPF.Wallets
     {
         private NewWallet _newWallet = new NewWallet();
         private Action _gotoWalletsMenu;
+        public DelegateCommand BackCommand { get; }
+        public DelegateCommand CreateWalletCommand { get; }
         public WalletAddViewModel(Action gotoWalletsMenu)
         {
             CreateWalletCommand = new DelegateCommand(CreateWallet, IsCreateWalletEnabled);
@@ -24,11 +22,6 @@ namespace EWalletWPF.Wallets
             _gotoWalletsMenu = gotoWalletsMenu;
             BackCommand = new DelegateCommand(_gotoWalletsMenu);
         }
-
-
-        public DelegateCommand BackCommand { get; }
-        public DelegateCommand CreateWalletCommand { get; }
-
         public WalletsNavigatableTypes Type
         {
             get
@@ -53,7 +46,7 @@ namespace EWalletWPF.Wallets
                 }
             }
         }
-        
+
         public string Description
         {
             get
@@ -139,7 +132,7 @@ namespace EWalletWPF.Wallets
 
         public void UpdateView()
         {
-            
+
         }
     }
 }

@@ -1,12 +1,11 @@
-﻿using System;
-using EWalletWPF.Navigation;
+﻿using EWalletWPF.Navigation;
 
 namespace EWalletWPF.Wallets
 {
     class BasicWalletsViewModel : NavigationBase<WalletsNavigatableTypes>, INavigatable<MainNavigatableTypes>
     {
         public BasicWalletsViewModel()
-        {     
+        {
             Navigate(WalletsNavigatableTypes.MainWallet);
         }
 
@@ -36,7 +35,6 @@ namespace EWalletWPF.Wallets
         }
         public void UpdateView()
         {
-
         }
     }
 }
