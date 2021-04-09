@@ -106,7 +106,7 @@ namespace EWalletWPF.Authentication
                 {
                     IsEnabled = true;
                 }
-                MessageBox.Show($"Sign In was successful for user {user.FirstName} {user.LastName}");
+                MessageBox.Show($"Sign In was successful for user {user.FullName}");
                 _gotoWallets.Invoke();
             }
         }

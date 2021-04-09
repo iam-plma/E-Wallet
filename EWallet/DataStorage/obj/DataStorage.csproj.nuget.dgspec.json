@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\VisualStudio\\C#\\Programming with C#\\LAB2\\EWallet\\EWallet\\DataStorage\\DataStorage.csproj": {}
+    "D:\\VisualStudio\\C#\\Programming with C#\\LAB2\\GIT\\E-Wallet\\EWallet\\DataStorage\\DataStorage.csproj": {}
   },
   "projects": {
-    "D:\\VisualStudio\\C#\\Programming with C#\\LAB2\\EWallet\\EWallet\\DataStorage\\DataStorage.csproj": {
+    "D:\\VisualStudio\\C#\\Programming with C#\\LAB2\\GIT\\E-Wallet\\EWallet\\DataStorage\\DataStorage.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\VisualStudio\\C#\\Programming with C#\\LAB2\\EWallet\\EWallet\\DataStorage\\DataStorage.csproj",
+        "projectUniqueName": "D:\\VisualStudio\\C#\\Programming with C#\\LAB2\\GIT\\E-Wallet\\EWallet\\DataStorage\\DataStorage.csproj",
         "projectName": "DataStorage",
-        "projectPath": "D:\\VisualStudio\\C#\\Programming with C#\\LAB2\\EWallet\\EWallet\\DataStorage\\DataStorage.csproj",
+        "projectPath": "D:\\VisualStudio\\C#\\Programming with C#\\LAB2\\GIT\\E-Wallet\\EWallet\\DataStorage\\DataStorage.csproj",
         "packagesPath": "C:\\Users\\Ivan\\.nuget\\packages\\",
-        "outputPath": "D:\\VisualStudio\\C#\\Programming with C#\\LAB2\\EWallet\\EWallet\\DataStorage\\obj\\",
+        "outputPath": "D:\\VisualStudio\\C#\\Programming with C#\\LAB2\\GIT\\E-Wallet\\EWallet\\DataStorage\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ivan\\AppData\\Roaming\\NuGet\\NuGet.Config",

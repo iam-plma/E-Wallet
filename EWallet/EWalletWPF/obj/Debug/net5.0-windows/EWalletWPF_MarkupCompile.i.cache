@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\VisualStudio\C#\Programming with C#\LAB2\EWallet\EWallet\EWalletWPF\obj\Debug\net5.0-windows\
+D:\VisualStudio\C#\Programming with C#\LAB2\GIT\E-Wallet\EWallet\EWalletWPF\obj\Debug\net5.0-windows\
 EWalletWPF
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
-D:\VisualStudio\C#\Programming with C#\LAB2\EWallet\EWallet\EWalletWPF\App.xaml
+D:\VisualStudio\C#\Programming with C#\LAB2\GIT\E-Wallet\EWallet\EWalletWPF\App.xaml
 10-323186000
 
 25654226801
-198-942485802
+198-1868963113
 Authentication\AuthView.xaml;Authentication\SignInView.xaml;Authentication\SignUpView.xaml;Header.xaml;MainView.xaml;MainWindow.xaml;Wallets\BasicWalletsView.xaml;Wallets\WalletAddView.xaml;Wallets\WalletDetailsView.xaml;Wallets\WalletsView.xaml;
 
-True
+False
 

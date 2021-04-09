@@ -13,9 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EWalletWPF", "EWalletWPF\EW
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csproj", "{E106A0F7-DDBA-4918-813C-488315FCA523}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{D01EEF21-1575-4349-B534-60BA8EE2B6C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Services.csproj", "{D01EEF21-1575-4349-B534-60BA8EE2B6C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStorage", "DataStorage\DataStorage.csproj", "{BA5B0AB6-4B00-4D9B-9CE7-CC6123CD3686}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStorage", "DataStorage\DataStorage.csproj", "{BA5B0AB6-4B00-4D9B-9CE7-CC6123CD3686}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EWalletTests", "EWalletTests\EWalletTests.csproj", "{C9602062-F7F3-4F7C-871E-D45DB4430371}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +45,10 @@ Global
 		{BA5B0AB6-4B00-4D9B-9CE7-CC6123CD3686}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA5B0AB6-4B00-4D9B-9CE7-CC6123CD3686}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA5B0AB6-4B00-4D9B-9CE7-CC6123CD3686}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9602062-F7F3-4F7C-871E-D45DB4430371}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9602062-F7F3-4F7C-871E-D45DB4430371}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9602062-F7F3-4F7C-871E-D45DB4430371}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9602062-F7F3-4F7C-871E-D45DB4430371}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
