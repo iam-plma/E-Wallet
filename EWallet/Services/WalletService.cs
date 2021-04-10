@@ -12,7 +12,7 @@ namespace Services
     {
         private FileDataStorage<DBWallet> _walletStorage = new FileDataStorage<DBWallet>();
         private FileDataStorage<DBUser> _userStorage = new FileDataStorage<DBUser>();
-        public static List<Wallet> Wallets = new List<Wallet>();
+        //public static List<Wallet> Wallets = new List<Wallet>();
 
         public WalletService()
         {
@@ -30,7 +30,7 @@ namespace Services
             var dbUser = users.FirstOrDefault(user => user.Login == UserManager.Login);
 
             List<string> walletsFileNames = new List<string>();
-            foreach (Guid guid in dbUser.WalletsGuids)
+            foreach (Guid guid in dbUser.WalletGuids)
                 walletsFileNames.Add(guid.ToString("N"));
 
             if (walletsFileNames.Count == 0)

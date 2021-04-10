@@ -1,4 +1,5 @@
 ﻿using EWalletWPF.Navigation;
+using EWalletWPF.Categories;
 
 namespace EWalletWPF.Wallets
 {
@@ -13,11 +14,16 @@ namespace EWalletWPF.Wallets
         {
             if (type == WalletsNavigatableTypes.MainWallet)
             {
-                return new WalletsViewModel(() => Navigate(WalletsNavigatableTypes.AddWallet));
+                return new WalletsViewModel(() => Navigate(WalletsNavigatableTypes.AddWallet), 
+                    () => Navigate(WalletsNavigatableTypes.Categories));
+            }
+            else if(type == WalletsNavigatableTypes.AddWallet)
+            {
+                return new WalletAddViewModel(() => Navigate(WalletsNavigatableTypes.MainWallet));
             }
             else
             {
-                return new WalletAddViewModel(() => Navigate(WalletsNavigatableTypes.MainWallet));
+                 return new BasicCategoriesViewModel(() => Navigate(WalletsNavigatableTypes.MainWallet));
             }
         }
 

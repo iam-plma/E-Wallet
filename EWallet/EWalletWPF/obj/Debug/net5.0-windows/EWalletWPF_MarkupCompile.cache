@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 D:\VisualStudio\C#\Programming with C#\LAB2\GIT\E-Wallet\EWallet\EWalletWPF\App.xaml
-10-323186000
+14-1830289035
 
-23663844860
+311609559091
 198-1868963113
-Authentication\AuthView.xaml;Authentication\SignInView.xaml;Authentication\SignUpView.xaml;Header.xaml;MainView.xaml;MainWindow.xaml;Wallets\BasicWalletsView.xaml;Wallets\WalletAddView.xaml;Wallets\WalletDetailsView.xaml;Wallets\WalletsView.xaml;
+Authentication\AuthView.xaml;Authentication\SignInView.xaml;Authentication\SignUpView.xaml;Categories\AddCategoryView.xaml;Categories\BasicCategoriesView.xaml;Categories\CategoriesView.xaml;Categories\CategoryDetailsView.xaml;Header.xaml;MainView.xaml;MainWindow.xaml;Wallets\BasicWalletsView.xaml;Wallets\WalletAddView.xaml;Wallets\WalletDetailsView.xaml;Wallets\WalletsView.xaml;
 
 False
 

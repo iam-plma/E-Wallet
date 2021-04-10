@@ -15,6 +15,13 @@
     public enum WalletsNavigatableTypes
     {
         MainWallet,
-        AddWallet
+        AddWallet,
+        Categories
+    }
+
+    public enum CategoriesNavigatableTypes
+    {
+        MainCategory,
+        AddCategory
     }
 }

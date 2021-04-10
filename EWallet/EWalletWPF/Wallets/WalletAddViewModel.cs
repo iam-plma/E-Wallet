@@ -18,7 +18,6 @@ namespace EWalletWPF.Wallets
         public WalletAddViewModel(Action gotoWalletsMenu)
         {
             CreateWalletCommand = new DelegateCommand(CreateWallet, IsCreateWalletEnabled);
-            //_gotoWalletsMenu = gotoWalletsMenu;
             _gotoWalletsMenu = gotoWalletsMenu;
             BackCommand = new DelegateCommand(_gotoWalletsMenu);
         }

@@ -108,3 +108,11 @@ D:\VisualStudio\C#\Programming with C#\LAB2\GIT\E-Wallet\EWallet\EWalletWPF\obj\
 D:\VisualStudio\C#\Programming with C#\LAB2\GIT\E-Wallet\EWallet\EWalletWPF\obj\Debug\net5.0-windows\ref\EWalletWPF.dll
 D:\VisualStudio\C#\Programming with C#\LAB2\GIT\E-Wallet\EWallet\EWalletWPF\obj\Debug\net5.0-windows\EWalletWPF.pdb
 D:\VisualStudio\C#\Programming with C#\LAB2\GIT\E-Wallet\EWallet\EWalletWPF\obj\Debug\net5.0-windows\EWalletWPF.genruntimeconfig.cache
+D:\VisualStudio\C#\Programming with C#\LAB2\GIT\E-Wallet\EWallet\EWalletWPF\obj\Debug\net5.0-windows\Categories\CategoriesView.g.cs
+D:\VisualStudio\C#\Programming with C#\LAB2\GIT\E-Wallet\EWallet\EWalletWPF\obj\Debug\net5.0-windows\Categories\CategoriesView.baml
+D:\VisualStudio\C#\Programming with C#\LAB2\GIT\E-Wallet\EWallet\EWalletWPF\obj\Debug\net5.0-windows\Categories\AddCategoryView.g.cs
+D:\VisualStudio\C#\Programming with C#\LAB2\GIT\E-Wallet\EWallet\EWalletWPF\obj\Debug\net5.0-windows\Categories\BasicCategoriesView.g.cs
+D:\VisualStudio\C#\Programming with C#\LAB2\GIT\E-Wallet\EWallet\EWalletWPF\obj\Debug\net5.0-windows\Categories\AddCategoryView.baml
+D:\VisualStudio\C#\Programming with C#\LAB2\GIT\E-Wallet\EWallet\EWalletWPF\obj\Debug\net5.0-windows\Categories\BasicCategoriesView.baml
+D:\VisualStudio\C#\Programming with C#\LAB2\GIT\E-Wallet\EWallet\EWalletWPF\obj\Debug\net5.0-windows\Categories\CategoryDetailsView.g.cs
+D:\VisualStudio\C#\Programming with C#\LAB2\GIT\E-Wallet\EWallet\EWalletWPF\obj\Debug\net5.0-windows\Categories\CategoryDetailsView.baml

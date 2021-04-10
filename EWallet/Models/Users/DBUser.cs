@@ -13,7 +13,8 @@ namespace Models.Users
         public string Email { get; }
         public string Login { get; }
         public string Password { get; }
-        public List<Guid> WalletsGuids { get; set; }
+        public List<Guid> WalletGuids { get; set; }
+        public List<Guid> CategoryGuids { get; set; }
 
         public DBUser(string firstName, string lastName, string email, string login, string password)
         {
@@ -24,17 +25,26 @@ namespace Models.Users
             Login = login;
             Password = password;
 
-            WalletsGuids = new List<Guid>();
+            WalletGuids = new List<Guid>();
+            CategoryGuids = new List<Guid>();
             FileName = Login;
         }
 
         public void AddWallet(Guid walletGuid)
         {
-            WalletsGuids.Add(walletGuid);
+            WalletGuids.Add(walletGuid);
         }
         public void DeleteWallet(Guid walletGuid)
         {
-            WalletsGuids.Remove(walletGuid);
+            WalletGuids.Remove(walletGuid);
+        }
+        public void AddCategory(Guid categoryGuid)
+        {
+            CategoryGuids.Add(categoryGuid);
+        }
+        public void DeleteCategory(Guid categoryGuid)
+        {
+            CategoryGuids.Remove(categoryGuid);
         }
 
     }

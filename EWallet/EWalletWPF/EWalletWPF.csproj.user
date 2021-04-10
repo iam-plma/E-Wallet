@@ -16,6 +16,18 @@
     <Compile Update="Authentication\SignUpView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Categories\AddCategoryView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Categories\BasicCategoriesView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Categories\CategoriesView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Categories\CategoryDetailsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Header.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -43,6 +55,18 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Authentication\SignUpView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Categories\AddCategoryView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Categories\BasicCategoriesView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Categories\CategoriesView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Categories\CategoryDetailsView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Header.xaml">
