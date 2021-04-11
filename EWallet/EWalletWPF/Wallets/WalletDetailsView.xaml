@@ -12,6 +12,7 @@
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition ></RowDefinition>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" >
@@ -37,8 +38,15 @@
                 <TextBlock>EUR</TextBlock>
             </ComboBox>
         </StackPanel>
+        <StackPanel Grid.Row="4" MinHeight="140">
+            <TextBlock Margin="10, 10, 10, 10">Categories</TextBlock>
+            <ListView Grid.RowSpan="1" MinHeight="100"  ItemsSource="{Binding Categories}" 
+                  >
+            </ListView>
+        </StackPanel>
+        
         <!--DeleteCurrentWallet-->
-        <StackPanel Grid.Row="4" VerticalAlignment="Bottom">
+        <StackPanel Grid.Row="5" VerticalAlignment="Bottom">
             <Button Name="BDeleteWallet" FontSize="18"  MinWidth="200" MaxWidth="400" Margin="10,10,10,10" Command="{Binding DeleteWalletCommand}">Delete Wallet</Button>
         </StackPanel>
     </Grid>

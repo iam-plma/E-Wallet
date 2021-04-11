@@ -1,7 +1,7 @@
 ﻿using DataStorage;
 using Models.Categories;
 using Models.Users;
-
+using Models.Wallets;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +12,7 @@ namespace Services
 {
     public class CategoryCreatingService
     {
-        //private FileDataStorage<DBWallet> _walletStorage = new FileDataStorage<DBWallet>();
+        private FileDataStorage<DBWallet> _walletStorage = new FileDataStorage<DBWallet>();
         private FileDataStorage<DBUser> _userStorage = new FileDataStorage<DBUser>();
         private FileDataStorage<DBCategory> _categoryStorage = new FileDataStorage<DBCategory>();
 
@@ -62,6 +62,22 @@ namespace Services
                 _categoryStorage.DeleteAsync(dbCategory.FileName);
 
             await _userStorage.AddOrUpdateAsync(dbUser);
+            return true;
+        }
+
+        public async Task<bool> AddCategoryToWalletAsync(Category categoryToAdd, Wallet _wallet)
+        {
+            if (String.IsNullOrEmpty(categoryToAdd.Label))
+                throw new ArgumentException("Category Label is Empty");
+
+            var categories = await _categoryStorage.GetAllAsync();
+            var dbCategory = categories.FirstOrDefault(category => category.FileName == categoryToAdd.FileName);
+
+            var wallets = await _walletStorage.GetAllAsync();
+            var dbWallet = wallets.FirstOrDefault(wallet => wallet.FileName == _wallet.FileName);
+            dbWallet.AddCategory(Guid.Parse(dbCategory.FileName));
+
+            await _walletStorage.AddOrUpdateAsync(dbWallet);
             return true;
         }
     }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EWalletWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="720" Width="1280" MinHeight="450" MinWidth="600" FontSize="18">
+        Title="MainWindow" Height="900" Width="1600" MinHeight="450" MinWidth="600" FontSize="18">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" MinHeight="100" MaxHeight="150"></RowDefinition>

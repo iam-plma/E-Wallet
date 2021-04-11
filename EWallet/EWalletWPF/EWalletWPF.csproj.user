@@ -37,6 +37,9 @@
     <Compile Update="Wallets\BasicWalletsView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Wallets\ChooseWalletCategoriesView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Wallets\WalletAddView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -79,6 +82,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Wallets\BasicWalletsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Wallets\ChooseWalletCategoriesView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Wallets\WalletAddView.xaml">

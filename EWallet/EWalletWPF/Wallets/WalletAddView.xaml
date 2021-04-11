@@ -5,41 +5,44 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:EWalletWPF.Wallets"
              mc:Ignorable="d" 
-             IsEnabled="{Binding IsEnabled}"
+             
              d:DesignHeight="500" d:DesignWidth="800">
     <UserControl.Resources>
-        <DataTemplate DataType="{ x:Type local:WalletAddViewModel}">
-            <local:WalletAddView></local:WalletAddView>
+        
+        <DataTemplate DataType="{ x:Type local:ChooseWalletCategoriesViewModel}">
+            <local:ChooseWalletCategoriesView></local:ChooseWalletCategoriesView>
         </DataTemplate>
     </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition MinWidth="100"></ColumnDefinition>
+            <ColumnDefinition Width="2"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition ></RowDefinition>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Grid.ColumnSpan="2">
+        <StackPanel Grid.Row="0" Grid.ColumnSpan="3">
             <TextBlock Margin="10, 10, 10, 0">Label</TextBlock>
             <TextBox MinWidth="300" Margin="10" HorizontalAlignment="Stretch" 
                      Text="{Binding Label, UpdateSourceTrigger=PropertyChanged}"></TextBox>
         </StackPanel>
-        <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="3">
             <TextBlock Margin="10, 10, 10, 0">Description</TextBlock>
             <TextBox MinWidth="300" Margin="10" HorizontalAlignment="Stretch" 
                      Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}"></TextBox>
         </StackPanel>
-        <StackPanel Grid.Row="2" Grid.ColumnSpan="2">
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="3">
             <TextBlock Margin="10, 10, 10, 0">Balance</TextBlock>
             <TextBox MinWidth="300" Margin="10" HorizontalAlignment="Stretch" 
                      Text="{Binding Balance, UpdateSourceTrigger=PropertyChanged}"></TextBox>
         </StackPanel>
-        <StackPanel Grid.Row="3" Grid.ColumnSpan="2">
+        <StackPanel Grid.Row="3" Grid.ColumnSpan="3">
             <TextBlock Margin="10, 10, 10, 0">Currency</TextBlock>
             <ComboBox Name="Currency" MinWidth="300" Margin="10" HorizontalAlignment="Stretch" Text="{Binding Currency, UpdateSourceTrigger=PropertyChanged}" >
                 <TextBlock>UAH</TextBlock>
@@ -47,11 +50,18 @@
                 <TextBlock>EUR</TextBlock>
             </ComboBox>
         </StackPanel>
-        <!--DeleteCurrentWallet-->
-        <StackPanel Grid.Row="4" Grid.Column="0" VerticalAlignment="Bottom">
-            <Button Name="BDeleteWallet" FontSize="18"  MinWidth="200" MaxWidth="400" Margin="10,10,10,10" Command="{Binding CreateWalletCommand}">Create New Wallet</Button>
+        <StackPanel Grid.Row="4">
+            <TextBlock Margin="10, 10, 10, 10" TextWrapping="Wrap">Categories (if list is empty you should add some categories first) </TextBlock>
+            <ListView Grid.RowSpan="1" MinHeight="100" MaxHeight="400" ItemsSource="{Binding Categories}" 
+                  DisplayMemberPath="CategoryDisplayName" SelectedItem="{Binding CurrentCategory}">
+            </ListView>
         </StackPanel>
-        <StackPanel Grid.Row="4" Grid.Column="1" VerticalAlignment="Bottom">
+        <GridSplitter Grid.Column="1" Grid.Row="4" HorizontalAlignment="Stretch"></GridSplitter>
+        <!--CategoryContent-->
+        <ContentControl Grid.Column="2" Grid.Row="4" Grid.RowSpan ="1" Content="{Binding CurrentCategory}"></ContentControl>
+        <!--DeleteCurrentWallet-->
+        <StackPanel Grid.Row="5" Grid.ColumnSpan="3" Height="100" VerticalAlignment="Bottom" HorizontalAlignment="Stretch">
+            <Button Name="BDeleteWallet" FontSize="18"  MinWidth="200" MaxWidth="400" Margin="10,10,10,10" Command="{Binding CreateWalletCommand}">Create New Wallet</Button>
             <Button Name="BBack" FontSize="18"  MinWidth="200" MaxWidth="400" Margin="10,10,10,10" Command="{Binding BackCommand}">Back</Button>
         </StackPanel>
     </Grid>

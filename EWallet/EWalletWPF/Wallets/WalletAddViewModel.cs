@@ -1,25 +1,41 @@
 ﻿using EWalletWPF.Navigation;
+using Models.Categories;
 using Models.Wallets;
 using Prism.Commands;
+using Prism.Mvvm;
 using Services;
 using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
 
 namespace EWalletWPF.Wallets
 {
-    public class WalletAddViewModel : INavigatable<WalletsNavigatableTypes>, INotifyPropertyChanged
+    public class WalletAddViewModel : BindableBase, INavigatable<WalletsNavigatableTypes>, INotifyPropertyChanged
     {
-        private NewWallet _newWallet = new NewWallet();
+        public NewWallet _newWallet = new NewWallet();
         private Action _gotoWalletsMenu;
+        private CategoryService _categoryService;
+        private ChooseWalletCategoriesViewModel _currentCategory;
         public DelegateCommand BackCommand { get; }
         public DelegateCommand CreateWalletCommand { get; }
+        public static ObservableCollection<ChooseWalletCategoriesViewModel> Categories { get; set; }
+
         public WalletAddViewModel(Action gotoWalletsMenu)
         {
             CreateWalletCommand = new DelegateCommand(CreateWallet, IsCreateWalletEnabled);
             _gotoWalletsMenu = gotoWalletsMenu;
             BackCommand = new DelegateCommand(_gotoWalletsMenu);
+
+            _categoryService = new CategoryService();
+            Categories = new ObservableCollection<ChooseWalletCategoriesViewModel>();
+            foreach(var category in _categoryService.GetCategories())
+            {
+                Categories.Add(new ChooseWalletCategoriesViewModel(category, this));
+            }
+
         }
         public WalletsNavigatableTypes Type
         {
@@ -96,6 +112,31 @@ namespace EWalletWPF.Wallets
                 }
             }
         }
+        public ChooseWalletCategoriesViewModel CurrentCategory
+        {
+            get
+            {
+                return _currentCategory;
+            }
+            set
+            {
+                _currentCategory = value;
+                RaisePropertyChanged();
+            }
+        }
+        public List<Category> WalletCategories
+        {
+            get
+            {
+                if(_newWallet.Categories == null)
+                {
+                    _newWallet.Categories = new List<Category>();
+                    return _newWallet.Categories;
+                }
+                else 
+                    return _newWallet.Categories;
+            }
+        }
         private async void CreateWallet()
         {
             var walletCreatingService = new WalletCreatingService();
@@ -115,13 +156,14 @@ namespace EWalletWPF.Wallets
 
         private bool IsCreateWalletEnabled()
         {
-            return !String.IsNullOrWhiteSpace(Label) && !String.IsNullOrWhiteSpace(Description) && (Currency == Currency.EUR || Currency == Currency.USD || Currency == Currency.UAH);
+            return !String.IsNullOrWhiteSpace(Label) && !String.IsNullOrWhiteSpace(Description) 
+                && (Currency == Currency.EUR || Currency == Currency.USD || Currency == Currency.UAH) && WalletCategories.Count != 0;
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged1;
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged1?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         public void ClearSensitiveData()
@@ -131,7 +173,11 @@ namespace EWalletWPF.Wallets
 
         public void UpdateView()
         {
-
+            Categories = new ObservableCollection<ChooseWalletCategoriesViewModel>();
+            foreach (var category in _categoryService.GetCategories())
+            {
+                Categories.Add(new ChooseWalletCategoriesViewModel(category, this));
+            }
         }
     }
 }

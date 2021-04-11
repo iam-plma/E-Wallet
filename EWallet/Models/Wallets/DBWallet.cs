@@ -1,5 +1,6 @@
 ﻿using DataStorage;
 using System;
+using System.Collections.Generic;
 
 namespace Models.Wallets
 {
@@ -11,6 +12,7 @@ namespace Models.Wallets
         public string Description { get; }
         public decimal Balance { get; }
         public Currency Currency { get; }
+        public List<Guid> CategoryGuids { get; set; }
 
         public DBWallet(string label, string description, decimal balance, Currency currency, string fileName = "")
         {
@@ -24,7 +26,13 @@ namespace Models.Wallets
                 FileName = Guid.ToString("N");
             else
                 FileName = fileName;
+
+            CategoryGuids = new List<Guid>();
         }
 
+        public void AddCategory(Guid categoryGuid)
+        {
+            CategoryGuids.Add(categoryGuid);
+        }
     }
 }

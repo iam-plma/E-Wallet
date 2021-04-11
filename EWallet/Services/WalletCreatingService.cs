@@ -18,6 +18,10 @@ namespace Services
                 throw new ArgumentException("Label is Empty");
 
             var dbWallet = new DBWallet(newWallet.Label, newWallet.Description, newWallet.Balance, newWallet.Currency);
+            for(int i = 0; i < newWallet.Categories.Count; i++)
+            {
+                dbWallet.CategoryGuids.Add(Guid.Parse(newWallet.Categories[i].FileName));
+            }
 
             var users = await _userStorage.GetAllAsync();
             var dbUser = users.FirstOrDefault(user => user.Login == UserManager.Login);
