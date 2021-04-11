@@ -16,5 +16,5 @@ D:\VisualStudio\C#\Programming with C#\LAB2\GIT\E-Wallet\EWallet\EWalletWPF\App.
 198-1868963113
 Authentication\AuthView.xaml;Authentication\SignInView.xaml;Authentication\SignUpView.xaml;Categories\AddCategoryView.xaml;Categories\BasicCategoriesView.xaml;Categories\CategoriesView.xaml;Categories\CategoryDetailsView.xaml;Header.xaml;MainView.xaml;MainWindow.xaml;Wallets\BasicWalletsView.xaml;Wallets\ChooseWalletCategoriesView.xaml;Wallets\WalletAddView.xaml;Wallets\WalletDetailsView.xaml;Wallets\WalletsView.xaml;
 
-False
+True
 

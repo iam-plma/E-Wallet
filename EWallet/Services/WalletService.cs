@@ -24,7 +24,7 @@ namespace Services
             return task.Result;
         }
 
-        public async Task<List<Wallet>> GetCurrentUserWalletsAsync()
+        private async Task<List<Wallet>> GetCurrentUserWalletsAsync()
         {
             var users = await _userStorage.GetAllAsync();
             var dbUser = users.FirstOrDefault(user => user.Login == UserManager.Login);

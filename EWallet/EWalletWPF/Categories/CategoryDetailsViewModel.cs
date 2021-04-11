@@ -1,8 +1,10 @@
 ﻿using Models.Categories;
+using Models.Wallets;
 using Prism.Commands;
 using Prism.Mvvm;
 using Services;
 using System;
+using System.Windows;
 
 namespace EWalletWPF.Categories
 {
@@ -47,14 +49,40 @@ namespace EWalletWPF.Categories
         public CategoryDetailsViewModel(Category category)
         {
             _category = category;
-            DeleteCategoryCommand = new DelegateCommand(new Action(DeleteWallet));
+            DeleteCategoryCommand = new DelegateCommand(new Action(DeleteCategory));
         }
 
-        private async void DeleteWallet()
+        private async void DeleteCategory()
         {
+            bool belongs = false;
             var creatingService = new CategoryCreatingService();
-            await creatingService.DeleteCategoryAsync(_category);
-            CategoriesViewModel.Categories.Remove(this);
+
+            var walletService = new WalletService();
+            var wallets = walletService.GetWallets();
+
+            var categoryService = new CategoryService();
+            foreach(Wallet wallet in wallets)
+            {
+                var catigories = categoryService.GetCurrentWalletCategories(wallet);
+                foreach(Category category in catigories)
+                {
+                    if(category.FileName == _category.FileName)
+                    {
+                        MessageBox.Show($"You can`t delete category that belongs to any wallet. Delete wallet first!");
+                        belongs = true;
+                        break;
+                    }
+                }
+                if (belongs)
+                    break;
+            }
+
+            if (!belongs)
+            {
+                await creatingService.DeleteCategoryAsync(_category);
+                CategoriesViewModel.Categories.Remove(this);
+            }
+            
         }
         private async void UpdateCategory()
         {
