@@ -56,9 +56,8 @@ namespace EWalletWPF.Wallets
 
         private void AddCategory()
         {
-            var creatingService = new CategoryCreatingService();
             _ownerViewModel.WalletCategories.Add(_category);
-            
+            WalletAddViewModel.Categories.Remove(this);
         }
     }
 }

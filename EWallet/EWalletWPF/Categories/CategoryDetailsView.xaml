@@ -14,12 +14,12 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" >
             <TextBlock Margin="10, 10, 10, 0">Label</TextBlock>
-            <TextBox MinWidth="300" Margin="10" HorizontalAlignment="Stretch" 
+            <TextBox IsReadOnly="true" MinWidth="300" Margin="10" HorizontalAlignment="Stretch" 
                      Text="{Binding Label, UpdateSourceTrigger=PropertyChanged}"></TextBox>
         </StackPanel>
         <StackPanel Grid.Row="1" >
             <TextBlock Margin="10, 10, 10, 0">Description</TextBlock>
-            <TextBox MinWidth="300" Margin="10" HorizontalAlignment="Stretch" 
+            <TextBox IsReadOnly="true" MinWidth="300" Margin="10" HorizontalAlignment="Stretch" 
                      Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}"></TextBox>
         </StackPanel>
         <!--DeleteCurrentCategory-->
