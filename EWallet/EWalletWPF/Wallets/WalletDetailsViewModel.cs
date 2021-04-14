@@ -12,9 +12,11 @@ namespace EWalletWPF.Wallets
     {
         private Wallet _wallet;
         private CategoryService _categoryService;
+        private WalletsViewModel _ownerView;
+        private Action _gotoTransactions;
         public static ObservableCollection<string> Categories { get; set; }
-        public DelegateCommand RefreshCommand { get; }
         public DelegateCommand DeleteWalletCommand { get; }
+        public DelegateCommand TransactionsCommand { get; }
         public string Name
         {
             get
@@ -64,9 +66,21 @@ namespace EWalletWPF.Wallets
             }
             set
             {
+                Currency tempCurrency = _wallet.Currency;
                 _wallet.Currency = value;
+
+                if (_wallet.Currency != tempCurrency)
+                    ChangeCurrency(tempCurrency);
+
                 UpdateWallet();
                 RaisePropertyChanged(nameof(DisplayName));
+            }
+        }
+        public Wallet Wallet
+        {
+            get
+            {
+                return _wallet;
             }
         }
         public string DisplayName
@@ -80,14 +94,17 @@ namespace EWalletWPF.Wallets
         {
             get
             {
-                return $"{_wallet.Label} ({_wallet.Balance} {_wallet.Currency})";
+                return $"{_wallet.Label} ({_wallet.Balance.ToString()} {_wallet.Currency})";
             }
         }
 
-        public WalletDetailsViewModel(Wallet wallet)
+        public WalletDetailsViewModel(Wallet wallet, Action gotoTransactions, WalletsViewModel owner)
         {
             _wallet = wallet;
             DeleteWalletCommand = new DelegateCommand(new Action(DeleteWallet));
+
+            _gotoTransactions = gotoTransactions;
+            TransactionsCommand = new DelegateCommand(_gotoTransactions);
 
             _categoryService = new CategoryService();
             Categories = new ObservableCollection<string>();
@@ -95,18 +112,64 @@ namespace EWalletWPF.Wallets
             {
                 Categories.Add($"{category.Label} - {category.Description}");
             }
-
+            _ownerView = owner;
         }
         private async void DeleteWallet()
         {
             var creatingService = new WalletCreatingService();
             await creatingService.DeleteWalletAsync(_wallet);
+
             WalletsViewModel.Wallets.Remove(this);
         }
         private async void UpdateWallet()
         {
             var creatingService = new WalletCreatingService();
             await creatingService.UpdateWalletAsync(_wallet);
-        } 
+        }
+        private void ChangeCurrency(Currency oldCurrency)
+        {
+            if (_wallet.Currency == Currency.UAH)
+            {
+                if (oldCurrency == Currency.EUR)
+                {
+                    Balance /= (decimal)33.45;
+                }
+                else if (oldCurrency == Currency.USD)
+                {
+                    Balance /= 28;
+                }
+                UpdateWallet();
+                _ownerView.UpdateView();
+                return;
+            }
+            if (_wallet.Currency == Currency.EUR)
+            {
+                if (oldCurrency == Currency.UAH)
+                {
+                    Balance *= (decimal)33.45;
+                }
+                else if (oldCurrency == Currency.USD)
+                {
+                    Balance *= (decimal)1.2;
+                }
+                UpdateWallet();
+                _ownerView.UpdateView();
+                return;
+            }
+            if (_wallet.Currency == Currency.USD)
+            {
+                if (oldCurrency == Currency.UAH)
+                {
+                    Balance *= 28;
+                }
+                else if (oldCurrency == Currency.EUR)
+                {
+                    Balance /= (decimal)1.2;
+                }
+                UpdateWallet();
+                _ownerView.UpdateView();
+                return;
+            }
+        }
     }
 }

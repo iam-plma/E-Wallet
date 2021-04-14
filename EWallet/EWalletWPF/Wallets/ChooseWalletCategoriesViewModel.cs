@@ -2,8 +2,6 @@
 using Prism.Commands;
 using Prism.Mvvm;
 using System;
-using System.Collections.Generic;
-using Services;
 
 namespace EWalletWPF.Wallets
 {
@@ -57,6 +55,7 @@ namespace EWalletWPF.Wallets
         private void AddCategory()
         {
             _ownerViewModel.WalletCategories.Add(_category);
+            _ownerViewModel.CreateWalletCommand.RaiseCanExecuteChanged();
             WalletAddViewModel.Categories.Remove(this);
         }
     }

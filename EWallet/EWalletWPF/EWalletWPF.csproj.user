@@ -34,6 +34,18 @@
     <Compile Update="MainView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Transactions\BasicTransactionView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Transactions\TransactionAddView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Transactions\TransactionDetailsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Transactions\TransactionView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Wallets\BasicWalletsView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -79,6 +91,18 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Transactions\BasicTransactionView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Transactions\TransactionAddView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Transactions\TransactionDetailsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Transactions\TransactionView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Wallets\BasicWalletsView.xaml">

@@ -22,9 +22,6 @@
             <TextBox IsReadOnly="true" MinWidth="300" Margin="10" HorizontalAlignment="Stretch" 
                      Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}"></TextBox>
         </StackPanel>
-        <!--DeleteCurrentCategory-->
-        <StackPanel Grid.Row="4" VerticalAlignment="Bottom">
-            <Button Name="BDeleteWallet" FontSize="18"  MinWidth="200" MaxWidth="400" Margin="10,10,10,10" Command="{Binding DeleteCategoryCommand}">Delete Category</Button>
-        </StackPanel>
+        
     </Grid>
 </UserControl>

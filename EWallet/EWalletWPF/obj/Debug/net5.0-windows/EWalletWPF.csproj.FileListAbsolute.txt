@@ -118,3 +118,11 @@ D:\VisualStudio\C#\Programming with C#\LAB2\GIT\E-Wallet\EWallet\EWalletWPF\obj\
 D:\VisualStudio\C#\Programming with C#\LAB2\GIT\E-Wallet\EWallet\EWalletWPF\obj\Debug\net5.0-windows\Categories\CategoryDetailsView.baml
 D:\VisualStudio\C#\Programming with C#\LAB2\GIT\E-Wallet\EWallet\EWalletWPF\obj\Debug\net5.0-windows\Wallets\ChooseWalletCategoriesView.g.cs
 D:\VisualStudio\C#\Programming with C#\LAB2\GIT\E-Wallet\EWallet\EWalletWPF\obj\Debug\net5.0-windows\Wallets\ChooseWalletCategoriesView.baml
+D:\VisualStudio\C#\Programming with C#\LAB2\GIT\E-Wallet\EWallet\EWalletWPF\obj\Debug\net5.0-windows\Transactions\BasicTransactionView.g.cs
+D:\VisualStudio\C#\Programming with C#\LAB2\GIT\E-Wallet\EWallet\EWalletWPF\obj\Debug\net5.0-windows\Transactions\TransactionAddView.g.cs
+D:\VisualStudio\C#\Programming with C#\LAB2\GIT\E-Wallet\EWallet\EWalletWPF\obj\Debug\net5.0-windows\Transactions\TransactionDetailsView.g.cs
+D:\VisualStudio\C#\Programming with C#\LAB2\GIT\E-Wallet\EWallet\EWalletWPF\obj\Debug\net5.0-windows\Transactions\TransactionView.g.cs
+D:\VisualStudio\C#\Programming with C#\LAB2\GIT\E-Wallet\EWallet\EWalletWPF\obj\Debug\net5.0-windows\Transactions\BasicTransactionView.baml
+D:\VisualStudio\C#\Programming with C#\LAB2\GIT\E-Wallet\EWallet\EWalletWPF\obj\Debug\net5.0-windows\Transactions\TransactionAddView.baml
+D:\VisualStudio\C#\Programming with C#\LAB2\GIT\E-Wallet\EWallet\EWalletWPF\obj\Debug\net5.0-windows\Transactions\TransactionDetailsView.baml
+D:\VisualStudio\C#\Programming with C#\LAB2\GIT\E-Wallet\EWallet\EWalletWPF\obj\Debug\net5.0-windows\Transactions\TransactionView.baml

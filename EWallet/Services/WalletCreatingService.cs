@@ -36,7 +36,7 @@ namespace Services
         public async Task<bool> UpdateWalletAsync(Wallet walletToEdit)
         {
             if (String.IsNullOrWhiteSpace(walletToEdit.Label))
-                throw new ArgumentException("Label is Empty");
+                walletToEdit.Label = "";
 
             var wallets = await _walletStorage.GetAllAsync();
             var newDBWallet = new DBWallet(walletToEdit.Label, walletToEdit.Description, walletToEdit.Balance, walletToEdit.Currency, walletToEdit.FileName);

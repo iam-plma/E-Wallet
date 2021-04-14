@@ -1,4 +1,4 @@
-﻿D:\VisualStudio\C#\Programming with C#\LAB2\GIT\E-Wallet\EWallet\EWalletWPF\obj\Debug\net5.0-windows\GeneratedInternalTypeHelper.g.cs
+﻿
 
 FD:\VisualStudio\C#\Programming with C#\LAB2\GIT\E-Wallet\EWallet\EWalletWPF\Authentication\AuthView.xaml;;
 FD:\VisualStudio\C#\Programming with C#\LAB2\GIT\E-Wallet\EWallet\EWalletWPF\Authentication\SignInView.xaml;;
@@ -10,6 +10,10 @@ FD:\VisualStudio\C#\Programming with C#\LAB2\GIT\E-Wallet\EWallet\EWalletWPF\Cat
 FD:\VisualStudio\C#\Programming with C#\LAB2\GIT\E-Wallet\EWallet\EWalletWPF\Header.xaml;;
 FD:\VisualStudio\C#\Programming with C#\LAB2\GIT\E-Wallet\EWallet\EWalletWPF\MainView.xaml;;
 FD:\VisualStudio\C#\Programming with C#\LAB2\GIT\E-Wallet\EWallet\EWalletWPF\MainWindow.xaml;;
+FD:\VisualStudio\C#\Programming with C#\LAB2\GIT\E-Wallet\EWallet\EWalletWPF\Transactions\BasicTransactionView.xaml;;
+FD:\VisualStudio\C#\Programming with C#\LAB2\GIT\E-Wallet\EWallet\EWalletWPF\Transactions\TransactionAddView.xaml;;
+FD:\VisualStudio\C#\Programming with C#\LAB2\GIT\E-Wallet\EWallet\EWalletWPF\Transactions\TransactionDetailsView.xaml;;
+FD:\VisualStudio\C#\Programming with C#\LAB2\GIT\E-Wallet\EWallet\EWalletWPF\Transactions\TransactionView.xaml;;
 FD:\VisualStudio\C#\Programming with C#\LAB2\GIT\E-Wallet\EWallet\EWalletWPF\Wallets\BasicWalletsView.xaml;;
 FD:\VisualStudio\C#\Programming with C#\LAB2\GIT\E-Wallet\EWallet\EWalletWPF\Wallets\ChooseWalletCategoriesView.xaml;;
 FD:\VisualStudio\C#\Programming with C#\LAB2\GIT\E-Wallet\EWallet\EWalletWPF\Wallets\WalletAddView.xaml;;

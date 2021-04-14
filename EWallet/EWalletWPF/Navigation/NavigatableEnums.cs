@@ -16,12 +16,19 @@
     {
         MainWallet,
         AddWallet,
-        Categories
+        Categories,
+        Transactions
     }
 
     public enum CategoriesNavigatableTypes
     {
         MainCategory,
         AddCategory
+    }
+
+    public enum TransactionsNavigatableTypes
+    {
+        MainTransaction,
+        AddTransaction
     }
 }

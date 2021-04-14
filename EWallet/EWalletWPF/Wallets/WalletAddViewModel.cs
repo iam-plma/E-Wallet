@@ -121,8 +121,10 @@ namespace EWalletWPF.Wallets
             set
             {
                 _currentCategory = value;
+                OnPropertyChanged();
                 RaisePropertyChanged();
             }
+
         }
         public List<Category> WalletCategories
         {
@@ -153,7 +155,6 @@ namespace EWalletWPF.Wallets
             MessageBox.Show($"Wallet successfully created");
             _gotoWalletsMenu.Invoke();
         }
-
         private bool IsCreateWalletEnabled()
         {
             return !String.IsNullOrWhiteSpace(Label) && !String.IsNullOrWhiteSpace(Description) 
