@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 D:\VisualStudio\C#\Programming with C#\LAB2\GIT\E-Wallet\EWallet\EWalletWPF\App.xaml
-19392769011
+20-1159689164
 
-41-1364928741
+43418983226
 198-1868963113
-Authentication\AuthView.xaml;Authentication\SignInView.xaml;Authentication\SignUpView.xaml;Categories\AddCategoryView.xaml;Categories\BasicCategoriesView.xaml;Categories\CategoriesView.xaml;Categories\CategoryDetailsView.xaml;Header.xaml;MainView.xaml;MainWindow.xaml;Transactions\BasicTransactionView.xaml;Transactions\TransactionAddView.xaml;Transactions\TransactionDetailsView.xaml;Transactions\TransactionView.xaml;Wallets\BasicWalletsView.xaml;Wallets\ChooseWalletCategoriesView.xaml;Wallets\WalletAddView.xaml;Wallets\WalletDetailsView.xaml;Wallets\WalletsView.xaml;
+Authentication\AuthView.xaml;Authentication\SignInView.xaml;Authentication\SignUpView.xaml;Categories\AddCategoryView.xaml;Categories\BasicCategoriesView.xaml;Categories\CategoriesView.xaml;Categories\CategoryDetailsView.xaml;Header.xaml;MainView.xaml;MainWindow.xaml;Transactions\BasicTransactionView.xaml;Transactions\TransactionAddView.xaml;Transactions\TransactionDetailsView.xaml;Transactions\TransactionView.xaml;Wallets\BasicWalletsView.xaml;Wallets\ChooseWalletCategoriesView.xaml;Wallets\WalletAddView.xaml;Wallets\WalletDetailsView.xaml;Wallets\WalletStatsView.xaml;Wallets\WalletsView.xaml;
 
 False
 

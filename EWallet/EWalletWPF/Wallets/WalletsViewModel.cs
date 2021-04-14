@@ -17,6 +17,7 @@ namespace EWalletWPF.Wallets
         private Action _gotoAddWallet;
         private Action _gotoCategories;
         private Action _gotoTransactions;
+        private Action _gotoStats;
         public static ObservableCollection<WalletDetailsViewModel> Wallets { get; set; }
         public DelegateCommand AddWalletCommand { get; }
         public DelegateCommand CategoriesCommand { get; }
@@ -43,14 +44,15 @@ namespace EWalletWPF.Wallets
                 return WalletsNavigatableTypes.MainWallet;
             }
         }
-        public WalletsViewModel(Action gotoAddWallet, Action gotoCategories, Action gotoTransaction)
+        public WalletsViewModel(Action gotoAddWallet, Action gotoCategories, Action gotoTransaction, Action gotoStats)
         {
             _gotoTransactions = gotoTransaction;
+            _gotoStats = gotoStats;
             _service = new WalletService();
             Wallets = new ObservableCollection<WalletDetailsViewModel>();
             foreach (var wallet in _service.GetWallets())
             {
-                Wallets.Add(new WalletDetailsViewModel(wallet, _gotoTransactions, this));
+                Wallets.Add(new WalletDetailsViewModel(wallet, _gotoTransactions, this, _gotoStats));
             }
             _gotoAddWallet = new Action(gotoAddWallet);
             AddWalletCommand = new DelegateCommand(_gotoAddWallet);
@@ -75,7 +77,7 @@ namespace EWalletWPF.Wallets
             Wallets = new ObservableCollection<WalletDetailsViewModel>();
             foreach (var wallet in _service.GetWallets())
             {
-                Wallets.Add(new WalletDetailsViewModel(wallet, _gotoTransactions, this));
+                Wallets.Add(new WalletDetailsViewModel(wallet, _gotoTransactions, this, _gotoStats));
             }
         }
     }

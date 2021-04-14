@@ -6,10 +6,13 @@
              xmlns:local="clr-namespace:EWalletWPF.Wallets"
              xmlns:transactions="clr-namespace:EWalletWPF.Transactions"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="500" d:DesignWidth="800">
     <UserControl.Resources>
         <DataTemplate DataType="{ x:Type transactions:BasicTransactionViewModel}">
             <transactions:BasicTransactionView></transactions:BasicTransactionView>
+        </DataTemplate>
+        <DataTemplate DataType="{ x:Type local:WalletStatsViewModel}">
+            <local:WalletStatsView></local:WalletStatsView>
         </DataTemplate>
     </UserControl.Resources>
     <Grid>
@@ -19,6 +22,7 @@
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition ></RowDefinition>
             <RowDefinition ></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -54,12 +58,15 @@
                   >
             </ListView>
         </StackPanel>
-        <StackPanel Grid.Row="5" Grid.Column="0" VerticalAlignment="Bottom">
+        <StackPanel Grid.Row="5" Grid.ColumnSpan="2" VerticalAlignment="Bottom" >
+            <Button Name="BWalletInfo" FontSize="18"  MinWidth="200" MaxWidth="400" Margin="10,10,10,10" Command="{Binding StatsCommand}">Wallet Last month Stats</Button>
+        </StackPanel>
+        <StackPanel Grid.Row="6" Grid.Column="0" VerticalAlignment="Bottom">
             <Button Name="BTransactions" FontSize="18"  MinWidth="200" MaxWidth="400" Margin="10,10,10,10" 
                     Command="{Binding TransactionsCommand}">Transactions</Button>
         </StackPanel>
         <!--DeleteCurrentWallet-->
-        <StackPanel Grid.Row="5" Grid.Column="1" VerticalAlignment="Bottom">
+        <StackPanel Grid.Row="6" Grid.Column="1" VerticalAlignment="Bottom">
             <Button Name="BDeleteWallet" FontSize="18"  MinWidth="200" MaxWidth="400" Margin="10,10,10,10" Command="{Binding DeleteWalletCommand}">Delete Wallet</Button>
         </StackPanel>
     </Grid>

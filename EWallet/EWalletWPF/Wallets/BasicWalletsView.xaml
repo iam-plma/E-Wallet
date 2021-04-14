@@ -13,6 +13,9 @@
         <DataTemplate DataType="{ x:Type local:WalletAddViewModel}">
             <local:WalletAddView></local:WalletAddView>
         </DataTemplate>
+        <DataTemplate DataType="{ x:Type local:WalletStatsViewModel}">
+            <local:WalletStatsView></local:WalletStatsView>
+        </DataTemplate>
     </UserControl.Resources>
     <ContentControl Content="{Binding CurrentViewModel}"></ContentControl>
 </UserControl>

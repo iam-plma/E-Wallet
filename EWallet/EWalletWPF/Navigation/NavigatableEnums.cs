@@ -17,6 +17,7 @@
         MainWallet,
         AddWallet,
         Categories,
+        Stats,
         Transactions
     }
 

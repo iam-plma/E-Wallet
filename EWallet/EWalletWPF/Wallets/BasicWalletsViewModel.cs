@@ -16,7 +16,8 @@ namespace EWalletWPF.Wallets
             if (type == WalletsNavigatableTypes.MainWallet)
             {
                 return new WalletsViewModel(() => Navigate(WalletsNavigatableTypes.AddWallet), 
-                    () => Navigate(WalletsNavigatableTypes.Categories), () => Navigate(WalletsNavigatableTypes.Transactions));
+                    () => Navigate(WalletsNavigatableTypes.Categories), () => Navigate(WalletsNavigatableTypes.Transactions), 
+                    () => Navigate(WalletsNavigatableTypes.Stats));
             }
             else if(type == WalletsNavigatableTypes.AddWallet)
             {
@@ -25,6 +26,10 @@ namespace EWalletWPF.Wallets
             else if(type == WalletsNavigatableTypes.Categories)
             {
                  return new BasicCategoriesViewModel(() => Navigate(WalletsNavigatableTypes.MainWallet));
+            }
+            else if (type == WalletsNavigatableTypes.Stats)
+            {
+                return new WalletStatsViewModel(() => Navigate(WalletsNavigatableTypes.MainWallet));
             }
             else
             {

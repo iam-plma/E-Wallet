@@ -90,7 +90,7 @@ namespace EWalletWPF.Transactions
         }
         public TransactionAddViewModel(Action gotoMaintransactions)
         {
-            CreateTransactionCommand = new DelegateCommand(CreateTransaction);
+            CreateTransactionCommand = new DelegateCommand(CreateTransaction, IsCreateTransactionEnabled);
             _gotoMainTransactions = gotoMaintransactions;
             BackCommand = new DelegateCommand(_gotoMainTransactions);
 
@@ -111,6 +111,11 @@ namespace EWalletWPF.Transactions
 
             MessageBox.Show($"Transaction successfully created");
             _gotoMainTransactions.Invoke();
+        }
+
+        private bool IsCreateTransactionEnabled()
+        {
+            return !String.IsNullOrWhiteSpace(Description) && DateTime <= DateTime.Today && Sum != 0;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

@@ -14,9 +14,11 @@ namespace EWalletWPF.Wallets
         private CategoryService _categoryService;
         private WalletsViewModel _ownerView;
         private Action _gotoTransactions;
+        private Action _gotoStats;
         public static ObservableCollection<string> Categories { get; set; }
         public DelegateCommand DeleteWalletCommand { get; }
         public DelegateCommand TransactionsCommand { get; }
+        public DelegateCommand StatsCommand { get; }
         public string Name
         {
             get
@@ -98,7 +100,7 @@ namespace EWalletWPF.Wallets
             }
         }
 
-        public WalletDetailsViewModel(Wallet wallet, Action gotoTransactions, WalletsViewModel owner)
+        public WalletDetailsViewModel(Wallet wallet, Action gotoTransactions, WalletsViewModel owner, Action gotoStats)
         {
             _wallet = wallet;
             DeleteWalletCommand = new DelegateCommand(new Action(DeleteWallet));
@@ -113,6 +115,9 @@ namespace EWalletWPF.Wallets
                 Categories.Add($"{category.Label} - {category.Description}");
             }
             _ownerView = owner;
+
+            _gotoStats = gotoStats;
+            StatsCommand = new DelegateCommand(_gotoStats);
         }
         private async void DeleteWallet()
         {
@@ -132,42 +137,40 @@ namespace EWalletWPF.Wallets
             {
                 if (oldCurrency == Currency.EUR)
                 {
-                    Balance /= (decimal)33.45;
+                    Balance *= (decimal)33.45;
                 }
                 else if (oldCurrency == Currency.USD)
                 {
-                    Balance /= 28;
+                    Balance *= 28;
                 }
                 UpdateWallet();
-                _ownerView.UpdateView();
                 return;
             }
             if (_wallet.Currency == Currency.EUR)
             {
                 if (oldCurrency == Currency.UAH)
                 {
-                    Balance *= (decimal)33.45;
+                    Balance /= (decimal)33.45;
                 }
                 else if (oldCurrency == Currency.USD)
                 {
-                    Balance *= (decimal)1.2;
+                    Balance /= (decimal)1.2;
                 }
+
                 UpdateWallet();
-                _ownerView.UpdateView();
                 return;
             }
             if (_wallet.Currency == Currency.USD)
             {
                 if (oldCurrency == Currency.UAH)
                 {
-                    Balance *= 28;
+                    Balance /= 28;
                 }
                 else if (oldCurrency == Currency.EUR)
                 {
-                    Balance /= (decimal)1.2;
+                    Balance *= (decimal)1.2;
                 }
                 UpdateWallet();
-                _ownerView.UpdateView();
                 return;
             }
         }
