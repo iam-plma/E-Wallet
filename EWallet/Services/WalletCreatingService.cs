@@ -2,6 +2,7 @@
 using Models.Users;
 using Models.Wallets;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -39,7 +40,14 @@ namespace Services
                 walletToEdit.Label = "";
 
             var wallets = await _walletStorage.GetAllAsync();
-            var newDBWallet = new DBWallet(walletToEdit.Label, walletToEdit.Description, walletToEdit.Balance, walletToEdit.Currency, walletToEdit.FileName);
+            var wallet = wallets.FirstOrDefault(wall => wall.FileName == walletToEdit.FileName);
+
+            var newDBWallet = new DBWallet(walletToEdit.Label, walletToEdit.Description, walletToEdit.Balance, walletToEdit.Currency,
+                walletToEdit.FileName);
+            for(int i = 0; i < wallet.CategoryGuids.Count; i++)
+                newDBWallet.AddCategory(wallet.CategoryGuids[i]);
+            for (int i = 0; i < wallet.TransactionGuids.Count; i++)
+                newDBWallet.TransactionGuids.Add(wallet.TransactionGuids[i]);
 
             await _walletStorage.AddOrUpdateAsync(newDBWallet);
 

@@ -32,7 +32,7 @@ namespace EWalletWPF.Wallets
         {
             get
             {
-                return _incomesSum;
+                return Math.Round(_incomesSum, 2);
             }
             set {  }
         }
@@ -40,7 +40,7 @@ namespace EWalletWPF.Wallets
         {
             get
             {
-                return _expensesSum;
+                return Math.Round(_expensesSum, 2);
             }
             set {  }
         }
@@ -65,7 +65,7 @@ namespace EWalletWPF.Wallets
             Expenses = new ObservableCollection<string>();
             foreach(var transaction in _transactionService.GetWalletLastMonthIncome(_wallet))
             {
-                string transactionString = $"{transaction.DateTime} Sum:{transaction.Sum}{transaction.Currency}";
+                string transactionString = $"{transaction.DateTime} Sum: {transaction.Sum} ({transaction.Currency})";
                 if (!String.IsNullOrEmpty(transaction.Description))
                 {
                     transactionString += $" - {transaction.Description}";
@@ -75,7 +75,7 @@ namespace EWalletWPF.Wallets
             }
             foreach (var transaction in _transactionService.GetWalletLastMonthExpenses(_wallet))
             {
-                string transactionString = $"{transaction.DateTime} Sum:{transaction.Sum}{transaction.Currency}";
+                string transactionString = $"{transaction.DateTime} Sum: {transaction.Sum} ({transaction.Currency})";
                 if (!String.IsNullOrEmpty(transaction.Description))
                 {
                     transactionString += $" - {transaction.Description}";
@@ -101,7 +101,7 @@ namespace EWalletWPF.Wallets
             Expenses = new ObservableCollection<string>();
             foreach (var transaction in _transactionService.GetWalletLastMonthIncome(_wallet))
             {
-                string transactionString = $"{transaction.DateTime} Sum:{transaction.Sum}{transaction.Currency}";
+                string transactionString = $"{transaction.DateTime} Sum: {transaction.Sum} ({transaction.Currency})";
                 if (!String.IsNullOrEmpty(transaction.Description))
                 {
                     transactionString += $" - {transaction.Description}";
@@ -111,7 +111,7 @@ namespace EWalletWPF.Wallets
             }
             foreach (var transaction in _transactionService.GetWalletLastMonthExpenses(_wallet))
             {
-                string transactionString = $"{transaction.DateTime} Sum:{transaction.Sum}{transaction.Currency}";
+                string transactionString = $"{transaction.DateTime} Sum: {transaction.Sum} ({transaction.Currency})";
                 if (!String.IsNullOrEmpty(transaction.Description))
                 {
                     transactionString += $" - {transaction.Description}";

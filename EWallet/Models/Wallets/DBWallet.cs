@@ -16,7 +16,8 @@ namespace Models.Wallets
         public List<Guid> CategoryGuids { get; set; }
         public List<Guid> TransactionGuids { get; set; }
 
-        public DBWallet(string label, string description, decimal balance, Currency currency, string fileName = "")
+        public DBWallet(string label, string description, decimal balance, Currency currency,
+             string fileName = "")
         {
             Guid = Guid.NewGuid();
             Label = label;
@@ -29,8 +30,15 @@ namespace Models.Wallets
             else
                 FileName = fileName;
 
-            CategoryGuids = new List<Guid>();
-            TransactionGuids = new List<Guid>();
+            //if (catGuids != null)
+            //    CategoryGuids = catGuids;
+            //else
+                CategoryGuids = new List<Guid>();
+
+            //if (transGuids != null)
+            //    TransactionGuids = transGuids;
+            //else
+                TransactionGuids = new List<Guid>();
         }
 
         public void AddCategory(Guid categoryGuid)
