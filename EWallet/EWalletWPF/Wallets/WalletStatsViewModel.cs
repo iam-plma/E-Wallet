@@ -13,20 +13,36 @@ namespace EWalletWPF.Wallets
         private Action _gotoWalletsMenu;
         private TransactionService _transactionService;
         private Wallet _wallet;
+
+        private decimal _incomesSum;
+        private decimal _expensesSum;
         public DelegateCommand BackCommand { get; }
         public static ObservableCollection<string> Incomes { get; set; }
         public static ObservableCollection<string> Expenses { get; set; }
-
-        public decimal Balance
+        public string Balance
         {
             get
             {
-                return _wallet.Balance;
+                return $"{Math.Round(_wallet.Balance, 2)} ({_wallet.Currency})";
             }
-            set
+            set{  }
+        }
+
+        public decimal IncomeSum
+        {
+            get
             {
-                
+                return _incomesSum;
             }
+            set {  }
+        }
+        public decimal ExpensesSum
+        {
+            get
+            {
+                return _expensesSum;
+            }
+            set {  }
         }
 
         public WalletsNavigatableTypes Type
@@ -36,6 +52,9 @@ namespace EWalletWPF.Wallets
 
         public WalletStatsViewModel(Action gotoWalletsMenu)
         {
+            _incomesSum = 0;
+            _expensesSum = 0;
+
             _wallet = UserManager.CurrentWallet;
 
             _gotoWalletsMenu = gotoWalletsMenu;
@@ -52,6 +71,7 @@ namespace EWalletWPF.Wallets
                     transactionString += $" - {transaction.Description}";
                 }
                 Incomes.Add(transactionString);
+                _incomesSum += exchangeCurrency(transaction.Sum, transaction.Currency);
             }
             foreach (var transaction in _transactionService.GetWalletLastMonthExpenses(_wallet))
             {
@@ -61,6 +81,7 @@ namespace EWalletWPF.Wallets
                     transactionString += $" - {transaction.Description}";
                 }
                 Expenses.Add(transactionString);
+                _expensesSum += exchangeCurrency(transaction.Sum, transaction.Currency);
             }
         }
 
@@ -71,8 +92,10 @@ namespace EWalletWPF.Wallets
 
         public void UpdateView()
         {
-            _wallet = UserManager.CurrentWallet;
+            _incomesSum = 0;
+            _expensesSum = 0;
 
+            _wallet = UserManager.CurrentWallet;
 
             Incomes = new ObservableCollection<string>();
             Expenses = new ObservableCollection<string>();
@@ -84,6 +107,7 @@ namespace EWalletWPF.Wallets
                     transactionString += $" - {transaction.Description}";
                 }
                 Incomes.Add(transactionString);
+                _incomesSum += exchangeCurrency(transaction.Sum, transaction.Currency);
             }
             foreach (var transaction in _transactionService.GetWalletLastMonthExpenses(_wallet))
             {
@@ -93,7 +117,50 @@ namespace EWalletWPF.Wallets
                     transactionString += $" - {transaction.Description}";
                 }
                 Expenses.Add(transactionString);
+                _expensesSum += exchangeCurrency(transaction.Sum, transaction.Currency);
             }
+        }
+
+        private decimal exchangeCurrency(decimal sum, Currency currency)
+        {
+            if (currency == _wallet.Currency)
+            {
+                return sum;
+            }
+            if (currency == Currency.UAH)
+            {
+                if (_wallet.Currency == Currency.EUR)
+                {
+                    return sum / (decimal)33.45;
+                }
+                else if (_wallet.Currency == Currency.USD)
+                {
+                    return sum / 28;
+                }
+            }
+            if (currency == Currency.EUR)
+            {
+                if (_wallet.Currency == Currency.UAH)
+                {
+                    return sum * (decimal)33.45;
+                }
+                else if (_wallet.Currency == Currency.USD)
+                {
+                    return sum * (decimal)1.2;
+                }
+            }
+            if (currency == Currency.USD)
+            {
+                if (_wallet.Currency == Currency.UAH)
+                {
+                    return sum * 28;
+                }
+                else if (_wallet.Currency == Currency.EUR)
+                {
+                    return sum / (decimal)1.2;
+                }
+            }
+            return sum;
         }
     }
 }

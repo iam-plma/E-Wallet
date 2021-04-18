@@ -10,6 +10,8 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition MinHeight="50" Height="Auto"></RowDefinition>
@@ -17,27 +19,36 @@
             <RowDefinition MinHeight="300" Height="Auto"></RowDefinition>
             <RowDefinition ></RowDefinition>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Grid.ColumnSpan="2">
+        <StackPanel Grid.Row="0" Grid.ColumnSpan="4">
             <TextBlock Margin="10, 10, 10, 0" HorizontalAlignment="Center">Balance</TextBlock>
             <TextBox MinWidth="300" Margin="10" HorizontalAlignment="Center" IsReadOnly="True"
                      Text="{Binding Balance, UpdateSourceTrigger=PropertyChanged}"></TextBox>
         </StackPanel>
-        <StackPanel Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center">
+        <StackPanel  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1" HorizontalAlignment="Right">
             <TextBlock Margin="10, 10, 10, 0" >Last month Incomes</TextBlock>
         </StackPanel>
-        <StackPanel Grid.Row="1"  Grid.Column="1" HorizontalAlignment="Center">
+        <StackPanel  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" HorizontalAlignment="Left">
+            <TextBox MinWidth="100" Margin="10"  IsReadOnly="True"
+                     Text="{Binding IncomeSum, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="1"  Grid.Column="2" Grid.ColumnSpan="1" HorizontalAlignment="Right">
             <TextBlock Margin="10, 10, 10, 0" >Last month Expenses</TextBlock>
         </StackPanel>
+        <StackPanel Grid.Row="1"  Grid.Column="3" Grid.ColumnSpan="1" HorizontalAlignment="Left">
+            <TextBox MinWidth="100" Margin="10"  IsReadOnly="True"
+                     Text="{Binding ExpensesSum, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        </StackPanel>
         <!--Incomes-->
-        <ListView Grid.Row="2" ItemsSource="{Binding Incomes}" 
+        <ListView Grid.Row="2" Grid.ColumnSpan="2" ItemsSource="{Binding Incomes}" 
                   >
         </ListView>
         <!--Expenses-->
-        <ListView Grid.Row="2" Grid.Column="1" ItemsSource="{Binding Expenses}" 
+        <ListView Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" ItemsSource="{Binding Expenses}" 
                   >
         </ListView>
         
-        <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Height="50" VerticalAlignment="Bottom" HorizontalAlignment="Stretch">
+        <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" Height="50"  VerticalAlignment="Bottom" HorizontalAlignment="Stretch">
             <Button Name="BBack" FontSize="18"  MinWidth="200" MaxWidth="400" Margin="10,10,10,10" Command="{Binding BackCommand}">Back</Button>
         </StackPanel>
     </Grid>

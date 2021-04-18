@@ -50,7 +50,7 @@ namespace EWalletWPF.Wallets
         {
             get
             {
-                return _wallet.Balance;
+                return Math.Round(_wallet.Balance, 2);
             }
             set
             {
@@ -89,7 +89,7 @@ namespace EWalletWPF.Wallets
         {
             get
             {
-                return $"{_wallet.Label} ({_wallet.Balance} {_wallet.Currency})";
+                return $"{_wallet.Label} ({Math.Round(_wallet.Balance, 2)} {_wallet.Currency})";
             }
         }
         public string CategoryDisplayName
